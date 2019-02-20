@@ -27,6 +27,7 @@ RUN apt-get -y install --no-install-recommends \
     zip \
     git \
     ruby2.6 \
+    ruby2.6-dev \
     build-essential \
     file \
     ssh
