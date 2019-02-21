@@ -45,5 +45,6 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "tools" "platforms;andro
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
 RUN gem install bundler
+RUN gem install fastlane
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
