@@ -43,6 +43,7 @@ RUN yes | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
 RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
+RUN curl -sL firebase.tools | bash
 
 ADD Gemfile Gemfile
 
