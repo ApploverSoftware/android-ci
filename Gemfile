@@ -10,4 +10,4 @@ gem 'danger-checkstyle_format'
 gem 'danger-android_lint'
 # https://github.com/jnunemaker/httparty/issues/681
 gem 'httparty', '0.17.1'
-gem 'firebase_app_distribution'
+gem 'fastlane-plugin-firebase_app_distribution'
