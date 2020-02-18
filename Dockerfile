@@ -30,6 +30,7 @@ RUN apt-get -y install --no-install-recommends \
     ruby2.6-dev \
     build-essential \
     file \
+    wget \
     ssh
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
