@@ -19,7 +19,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME "/root"
 
 RUN apt-add-repository ppa:brightbox/ruby-ng
-RUN apt-get update
+RUN apt-get update --fix-missing
 RUN apt-get -y install --no-install-recommends \
     curl \
     openjdk-8-jdk \
