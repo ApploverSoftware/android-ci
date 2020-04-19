@@ -47,7 +47,7 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;goo
 
 ADD Gemfile Gemfile
 
-RUN gem install bundler
+RUN gem install bundler && gem install nokogiri
 RUN bundle install
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
