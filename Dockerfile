@@ -31,6 +31,7 @@ RUN apt-get -y install --no-install-recommends \
     build-essential \
     file \
     wget \
+    zlib1g-dev \
     ssh
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
