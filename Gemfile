@@ -3,6 +3,7 @@
 
 source "https://rubygems.org"
 
+gem "pkg-config"
 gem "fastlane"
 gem "danger"
 gem "danger-gitlab"
