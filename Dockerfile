@@ -12,7 +12,7 @@ ENV SDK_TOOLS "4333796"
 ENV BUILD_TOOLS "29.0.2"
 ENV TARGET_SDK "29"
 
-ENV ANDROID_HOME "opt/sdk"
+ENV ANDROID_HOME "/sdk"
 
 ENV PATH "$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
 
@@ -47,9 +47,9 @@ RUN mkdir -p ~/.android && touch ~/.android/repositories.cfg
 # Install SDK Packages
 RUN yes | sdkmanager --licenses && \
     sdkmanager --update && \
-    sdkmanager "platform-tools" "extras;android;m2repository" "extras;google;m2repository" "extras;google;google_play_services" && \
-    sdkmanager "platforms;android-${TARGET_SDK}" "build-tools;${BUILD_TOOLS}"
+    sdkmanager "platform-tools" "extras;android;m2repository" "extras;google;m2repository" "extras;google;google_play_services"
 
 ADD Gemfile Gemfile
 RUN gem install bundler && gem install nokogiri -- --use-system-libraries && bundle install && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}"
