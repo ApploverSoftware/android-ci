@@ -35,7 +35,8 @@ RUN apt-add-repository ppa:brightbox/ruby-ng && \
     libxml2-dev \
     zlib1g-dev \
     liblzma-dev \
-    libxslt1-dev
+    libxslt1-dev \
+    jq
 
 # Download and extract Android Tools
 RUN wget -q http://dl.google.com/android/repository/sdk-tools-linux-${SDK_TOOLS}.zip -O /tmp/tools.zip && \
