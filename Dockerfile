@@ -8,9 +8,9 @@ ENV LC_ALL "en_US.UTF-8"
 ENV LANGUAGE "en_US.UTF-8"
 ENV LANG "en_US.UTF-8"
 
-ENV SDK_TOOLS "4333796"
-ENV BUILD_TOOLS "29.0.2"
-ENV TARGET_SDK "29"
+ENV CLI_TOOLS "6858069_latest"
+ENV BUILD_TOOLS "29.0.3"
+ENV TARGET_SDK "30"
 
 ENV ANDROID_HOME "/sdk"
 
@@ -39,7 +39,7 @@ RUN apt-add-repository ppa:brightbox/ruby-ng && \
     jq
 
 # Download and extract Android Tools
-RUN wget -q http://dl.google.com/android/repository/sdk-tools-linux-${SDK_TOOLS}.zip -O /tmp/tools.zip && \
+RUN wget -q https://dl.google.com/android/repository/commandlinetools-linux-${CLI_TOOLS}.zip -O /tmp/tools.zip && \
     unzip -qq /tmp/tools.zip -d ${ANDROID_HOME} && \
     rm -v /tmp/tools.zip
 
